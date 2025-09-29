@@ -27,7 +27,7 @@ export function HeroSection() {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance drop-shadow-lg">
           Một Chiếc Túi
           <br />
-          Ngăn Hành Động Xanh
+          Ngàn Hành Động Xanh
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto drop-shadow-md">
           Cùng chúng tôi bảo vệ môi trường với những chiếc túi vải thân thiện
