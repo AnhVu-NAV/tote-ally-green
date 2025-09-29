@@ -49,8 +49,8 @@ export async function POST(request: NextRequest) {
 
     // Gửi về hộp thư của bạn
     await resend.emails.send({
-      from: process.env.FROM_IDENTITY || "System Toteallygreen <toteallygreen.system@resend.dev>",
-      to: process.env.ORDERS_INBOX || "toteallygreen.official@gmail.com",
+      from: "System Toteallygreen <toteallygreen.system@resend.dev>",
+      to:  "toteallygreen.official@gmail.com",
       subject: `Đăng ký tư vấn — ${customerName}`,
       html,
     })
