@@ -12,8 +12,7 @@ const nunito = Nunito({
 export const metadata: Metadata = {
   title: "Tote-Ally Green - Túi Vải Thân Thiện Môi Trường",
   description:
-    "Một chiếc túi ngăn hành động xanh. Cùng chúng tôi bảo vệ môi trường với những chiếc túi vải thân thiện.",
-    generator: 'v0.app'
+    "Một chiếc túi ngàn hành động xanh. Cùng chúng tôi bảo vệ môi trường với những chiếc túi vải thân thiện.",
 }
 
 export default function RootLayout({

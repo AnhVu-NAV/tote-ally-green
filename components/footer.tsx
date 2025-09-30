@@ -28,32 +28,32 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-3 hover:text-green-200 transition-colors">
                 <Facebook className="w-5 h-5" />
-                <span>Fanpage: facebook.com/tote.ally.green</span>
+                <a href="https://www.facebook.com/profile.php?id=61581129946899&mibextid=wwXIfr&rdid=kw21Z1Ll88JjJtSO&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F179QRyxrTz%2F%3Fmibextid%3DwwXIfr#"><span>Fanpage: Tote-Ally Green </span></a>
               </div>
               <div className="flex items-center space-x-3 hover:text-green-200 transition-colors">
                 <Globe className="w-5 h-5" />
-                <span>Email: tote.allygreen@gmail.com</span>
+                <span>Email: toteallygreen.official@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 hover:text-green-200 transition-colors">
                 <Instagram className="w-5 h-5" />
-                <span>Instagram: tote.ally_green</span>
+                <a href="https://www.instagram.com/tote.ally_green?igsh=MXR2cWtmYnluNWY4MA%3D%3D&utm_source=qr"><span>Instagram: tote.ally_green</span></a>
               </div>
               <div className="flex items-center space-x-3 hover:text-green-200 transition-colors">
                 <Globe className="w-5 h-5" />
-                <span>Website: tote-ally-green.com</span>
+                <a href="https://toteallygreen.vercel.app/"><span>Website: toteallygreen.vercel.app</span></a>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-green-500 mt-8 pt-8 text-center">
-          <Image
+        <div className="border-t border-green-500 mt-8 pt-2 text-center">
+          {/* <Image
             src="/images/tote-logo.png"
             alt="Tote-Ally Green"
             width={200}
             height={120}
             className="mx-auto object-contain opacity-80"
-          />
+          /> */}
           <p className="text-green-200 mt-2">© 2025 Tote-Ally Green. All rights reserved.</p>
         </div>
       </div>

@@ -23,12 +23,10 @@ export function AboutSection() {
                 </h2>
               </div>
               <p className="text-gray-700 mb-6 text-lg leading-relaxed">
-                Chúng tôi tạo ra những chiếc túi không chỉ để đựng đồ, mà còn là người đồng hành lâu dài của bạn trong
-                cuộc sống xanh.
+                Chúng tôi tin rằng mỗi chiếc túi không chỉ để đựng đồ, mà còn là người đồng hành lan toả lối sống xanh.
               </p>
               <p className="text-gray-700 text-lg leading-relaxed">
-                Một chiếc túi tote có thể thay thế hàng trăm túi ni lông, biến hành động nhỏ thành tác động lớn đối với
-                môi trường bền vững.
+                Một chiếc túi tote có thể thay thế hàng trăm túi nilon, biến hành động nhỏ thành tác động lớn vì một môi trường bền vững
               </p>
             </div>
           </div>

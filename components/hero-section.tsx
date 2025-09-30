@@ -29,9 +29,10 @@ export function HeroSection() {
           <br />
           Ngàn Hành Động Xanh
         </h1>
-        <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto drop-shadow-md">
+        <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto drop-shadow-md whitespace-nowrap">
           Cùng chúng tôi bảo vệ môi trường với những chiếc túi vải thân thiện
         </p>
+
         <Button
           size="lg"
           className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold shadow-lg"
