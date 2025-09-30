@@ -34,7 +34,7 @@ const products = [
     id: 5,
     name: "Tote-Ally Green Chibi",
     price: "35.000đ",
-    image: "/images/tote-original.png",
+    image: "/images/tote-chibi.png",
   },
 ]
 

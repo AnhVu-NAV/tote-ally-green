@@ -16,10 +16,10 @@ export function AboutSection() {
           {/* Content Overlay */}
           <div className="relative z-10 flex items-center justify-center h-full p-8 md:p-16">
             <div className="bg-white/95 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-2xl max-w-2xl mx-auto text-center">
-              <div className="flex items-center justify-center mb-6">
-                <span className="text-3xl mr-3">🌿</span>
-                <h2 className="text-2xl md:text-3xl font-bold text-green-600">
-                  "Tote-Ally Green – Mang xanh theo bạn"
+              <div className="flex items-center justify-center mb-6 space-x-3">
+                <span className="text-3xl">🌿</span>
+                <h2 className="text-2xl md:text-2xl font-bold text-green-600">
+                  Tote-Ally Green – Mang xanh theo bạn
                 </h2>
               </div>
               <p className="text-gray-700 mb-6 text-lg leading-relaxed">
