@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { PurchaseModal } from "@/components/purchase-modal"
+import { event } from "@/lib/gtag"
 
 const products = [
   {
@@ -37,6 +38,21 @@ const products = [
     image: "/images/tote-chibi.png",
   },
 ]
+
+const parseVND = (s: string) => Number(s.replace(/[^\d]/g, "")) || 0
+const handlePurchase = (product: (typeof products)[0]) => {
+  // Gửi GA4 event
+  event({
+    action: "cta_click",
+    category: "engagement",
+    label: `buy_${product.id}_${product.name}`,
+    value: parseVND(product.price),
+  })
+
+  setSelectedProduct(product)
+  setIsModalOpen(true)
+}
+
 
 export function ProductSection() {
   const [selectedProduct, setSelectedProduct] = useState<(typeof products)[0] | null>(null)
@@ -72,6 +88,8 @@ export function ProductSection() {
                 <h3 className="font-semibold text-lg mb-2 text-center text-gray-800">{product.name}</h3>
                 <p className="text-red-500 font-bold text-xl text-center mb-4">{product.price}</p>
                 <Button
+                  data-product-id={product.id}
+                  data-product-name={product.name}
                   className="w-full bg-green-600 hover:bg-green-700 font-semibold py-2 transition-colors duration-200"
                   onClick={() => handlePurchase(product)}
                 >

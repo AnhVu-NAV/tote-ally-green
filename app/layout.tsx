@@ -2,6 +2,9 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Nunito } from "next/font/google"
 import "./globals.css"
+import Script from "next/script"
+import Analytics from "@/components/Analytics"
+import { GA_ID, isGAEnabled } from "@/lib/gtag"
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -15,14 +18,41 @@ export const metadata: Metadata = {
     "Một chiếc túi ngàn hành động xanh. Cùng chúng tôi bảo vệ môi trường với những chiếc túi vải thân thiện.",
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="vi" className="scroll-smooth">
-      <body className={nunito.className}>{children}</body>
+      <body className={nunito.className}>
+        {children}
+
+        {/* GA4 scripts chỉ chạy ở production khi có GA_ID */}
+        {isGAEnabled && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                // Consent Mode v2 (mặc định tắt lưu trữ cho đến khi người dùng đồng ý)
+                gtag('consent', 'default', {
+                  'ad_user_data': 'denied',
+                  'ad_personalization': 'denied',
+                  'ad_storage': 'denied',
+                  'analytics_storage': 'granted'
+                });
+
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', {
+                  anonymize_ip: true
+                });
+              `}
+            </Script>
+            <Analytics />
+          </>
+        )}
+      </body>
     </html>
   )
 }

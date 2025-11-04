@@ -12,7 +12,7 @@ export function Footer() {
             {/* Cột trái: nền xanh đậm + logo */}
             <div className="bg-[#17542a] md:col-span-2 flex items-center justify-center py-10 px-6">
               <Image
-                src="/images/tote-logo.png"
+                src="/images/footer.jpg"
                 alt="Tote-Ally Green Logo"
                 width={220}
                 height={120}
