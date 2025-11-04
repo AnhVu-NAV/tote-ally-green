@@ -5,6 +5,7 @@ import "./globals.css"
 import Script from "next/script"
 import Analytics from "@/components/Analytics"
 import { GA_ID, isGAEnabled } from "@/lib/gtag"
+import { Suspense } from "react"   // <-- thêm dòng này
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -24,7 +25,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={nunito.className}>
         {children}
 
-        {/* GA4 scripts chỉ chạy ở production khi có GA_ID */}
         {isGAEnabled && (
           <>
             <Script
@@ -35,21 +35,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
-                // Consent Mode v2 (mặc định tắt lưu trữ cho đến khi người dùng đồng ý)
                 gtag('consent', 'default', {
                   'ad_user_data': 'denied',
                   'ad_personalization': 'denied',
                   'ad_storage': 'denied',
                   'analytics_storage': 'granted'
                 });
-
                 gtag('js', new Date());
-                gtag('config', '${GA_ID}', {
-                  anonymize_ip: true
-                });
+                gtag('config', '${GA_ID}', { anonymize_ip: true });
               `}
             </Script>
-            <Analytics />
+
+            {/* bọc Analytics bằng Suspense để tránh CSR bailout */}
+            <Suspense fallback={null}>
+              <Analytics />
+            </Suspense>
           </>
         )}
       </body>
